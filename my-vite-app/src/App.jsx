@@ -11,10 +11,12 @@ function App() {
   const fetchNumber = async () => {
     setLoading(true);
     setError(null);
+
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
     
     try {
-      const response = await fetch('http://localhost:3000/number');
-      
+      const response = await fetch(`${API_URL}/number`);
+
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }

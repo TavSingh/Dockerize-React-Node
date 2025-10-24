@@ -6,8 +6,8 @@ COPY my-vite-app/package*.json ./
 
 RUN npm install
 
-COPY . .
+COPY my-vite-app/ .
 
 EXPOSE 5173
 
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "dev", "--", "--host"]
